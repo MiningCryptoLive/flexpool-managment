@@ -30,7 +30,7 @@ const BigTitle = styled.h1`
     }
 
     @media (min-width: 10px) and (max-width: 400px) {
-    font-size: 24px;
+    font-size: 22px;
   }
 `;
 

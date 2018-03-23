@@ -89,6 +89,7 @@ export class CostReductionSection extends Component {
           labelText="Aantal ijzeren uitvraag"
           placeholder="Perodieke vaste uitvraag"
           onValueChange={value => this.inputValueChange(iron, value)}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
 
         <InputRow
@@ -97,6 +98,7 @@ export class CostReductionSection extends Component {
           onValueChange={value =>
             this.inputValueChange(costFlexpoolPerHour, value)
           }
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         >
           <Input
             type="number"

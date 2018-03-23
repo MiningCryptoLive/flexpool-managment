@@ -72,6 +72,7 @@ export class PlanningSection extends Component {
           onValueChange={value => this.inputValueChange(collectDocuments, value)}
           subRowFirst="75%"
           subRowSecond={this.state.collectDocumentsProfitIndication}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <InputRow
           labelText="Contorleren, verzamelen, doorsturen van gewerkte uren"
@@ -79,6 +80,7 @@ export class PlanningSection extends Component {
           onValueChange={value => this.inputValueChange(checkHours, value)}
           subRowFirst="75%"
           subRowSecond={this.state.checkHoursProfitIndication}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <InputRow
           labelText="Factuurcontroler"
@@ -86,6 +88,7 @@ export class PlanningSection extends Component {
           onValueChange={value => this.inputValueChange(checkInvoice, value)}
           subRowFirst="50%"
           subRowSecond={this.state.checkInvoiceProfitIndication}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
 
         <Inset>

@@ -93,16 +93,19 @@ export class CoreSection extends Component {
           labelText="Aantal medewerker"
           placeholder="Aantal medewerkers"
           onValueChange={value => this.inputValueChange(noOfEmployees, value)}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <InputRow
           labelText="Aantal uur per dag"
           placeholder="Aantal uur"
           onValueChange={value => this.inputValueChange(hoursPerDay, value)}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <InputRow
           labelText="Aantal dagen per jaar"
           placeholder="Aantal dagen"
           onValueChange={value => this.inputValueChange(daysPerYear, value)}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <Inset>
           <ResultRow

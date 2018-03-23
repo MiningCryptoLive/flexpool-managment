@@ -99,11 +99,13 @@ export class SavingSection extends Component {
           onValueChange={value => this.inputValueChange(margin, value)}
           subRowFirst="40%"
           subRowSecond={`€${this.state.profitIndication},-`}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <InputRow
           labelText="Retentie"
           placeholder="In aantal werkdagen"
           onValueChange={value => this.inputValueChange(retention, value)}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <InputRow
           labelText="Aantal dagen tot een werknemer is ingewerkt"

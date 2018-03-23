@@ -15,7 +15,6 @@ const Input = styled.input`
   width: 100%;
 `;
 
-
 export class InputRow extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +37,8 @@ export class InputRow extends Component {
     inset: PropTypes.bool,
     onValueChange: PropTypes.func,
     subRowFirst: PropTypes.any,
-    subRowSecond: PropTypes.any
+    subRowSecond: PropTypes.any,
+    popupText: PropTypes.string
   };
 
   static defaultProps = {
@@ -47,24 +47,31 @@ export class InputRow extends Component {
   };
 
   renderLastRow() {
-    const {subRowFirst, subRowSecond, children } = this.props;
-    
-    if(subRowFirst) {
-      return <SubRows valueOne={subRowFirst} valueTwo={subRowSecond}/>
+    const { subRowFirst, subRowSecond, children } = this.props;
+
+    if (subRowFirst) {
+      return <SubRows valueOne={subRowFirst} valueTwo={subRowSecond} />;
     }
 
-    if(children) {
+    if (children) {
       return children;
     }
-
   }
 
   render() {
-    const { labelText, star, placeholder, inset, subRowFirst, subRowSecond } = this.props;
+    const {
+      labelText,
+      star,
+      placeholder,
+      inset,
+      subRowFirst,
+      subRowSecond,
+      popupText
+    } = this.props;
 
     return (
       <Row inset={inset}>
-        <Label labelText={labelText} star={star} />
+        <Label labelText={labelText} star={star} popupText={popupText}/>
         <Input
           value={this.state.value}
           type="number"
@@ -73,7 +80,6 @@ export class InputRow extends Component {
         />
 
         {this.renderLastRow()}
-
       </Row>
     );
   }

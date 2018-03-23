@@ -90,7 +90,8 @@ export class TimeSavingSection extends Component {
           placeholder="0%"
           onValueChange={value => this.inputValueChange(notTooEarly, value)}
           subRowSentenceResult="5 min"
-          subRowSentenceLabel="per persoon per dag s"
+          subRowSentenceLabel="per persoon per dag"
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         >
           <SubText>
             {this.state.minutesSavedEarly} min&nbsp;<SubTextLabel>
@@ -102,6 +103,7 @@ export class TimeSavingSection extends Component {
           labelText="Niet te laat klaar"
           placeholder="0%"
           onValueChange={value => this.inputValueChange(notTooLate, value)}
+          popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         >
           <SubText>
             {this.state.minutesSavedLate} min&nbsp;<SubTextLabel>
