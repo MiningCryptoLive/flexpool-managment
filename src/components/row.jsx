@@ -30,6 +30,10 @@ const Col = styled.div`
 
   @media (min-width: 10px) and (max-width: 800px) {
     padding: 0 ${props => (props.inset ? '10px' : '0')};
+
+    &:last-of-type {
+      display: none;
+    }
   }
 `;
 
@@ -56,7 +60,11 @@ export class Row extends Component {
     const cols = [];
 
     for (let i = 0; i < children.length; i++) {
-      cols.push(<Col key={i} inset={inset}>{children[i]}</Col>);
+      cols.push(
+        <Col key={i} inset={inset}>
+          {children[i]}
+        </Col>
+      );
     }
 
     return cols;
