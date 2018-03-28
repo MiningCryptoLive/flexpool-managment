@@ -9,6 +9,7 @@ import { miniMargin, halfMargin, baseMargin, colors } from '../theme.js';
 import { SectionResult } from './sectionResult';
 import { Inset } from './inset';
 import { inputValueChange } from '../utils';
+import { LastColumnTitles } from './lastColumnTitles';
 
 export class PlanningSection extends Component {
   static propTypes = {
@@ -23,15 +24,27 @@ export class PlanningSection extends Component {
     this.inputRows = {
       collectDocuments: {
         id: 'collectDocuments',
-        calculates: ['collectDocumentsProfitIndication', 'totalHoursProfit', 'endResult'],
+        calculates: [
+          'collectDocumentsProfitIndication',
+          'totalHoursProfit',
+          'endResult'
+        ]
       },
       checkHours: {
         id: 'checkHours',
-        calculates: ['checkHoursProfitIndication', 'totalHoursProfit', 'endResult'],
+        calculates: [
+          'checkHoursProfitIndication',
+          'totalHoursProfit',
+          'endResult'
+        ]
       },
       checkInvoice: {
         id: 'checkInvoice',
-        calculates: ['checkInvoiceProfitIndication', 'totalHoursProfit', 'endResult'],
+        calculates: [
+          'checkInvoiceProfitIndication',
+          'totalHoursProfit',
+          'endResult'
+        ]
       }
     };
 
@@ -43,33 +56,47 @@ export class PlanningSection extends Component {
       checkHoursProfitIndication: 0,
       checkInvoiceProfitIndication: 0,
       totalHoursProfit: 0,
-      endResult:0
-    }
+      endResult: 0
+    };
 
     this.resultCalculations = {
       collectDocumentsProfitIndication: state => state.collectDocuments * 0.75,
       checkHoursProfitIndication: state => state.checkHours * 0.75,
       checkInvoiceProfitIndication: state => state.checkInvoice * 0.5,
-      totalHoursProfit: state => (state.collectDocuments * 0.75) + (state.checkHours * 0.75) + (state.checkInvoice * 0.5),
+      totalHoursProfit: state =>
+        state.collectDocuments * 0.75 +
+        state.checkHours * 0.75 +
+        state.checkInvoice * 0.5,
       endResult: state => {
-        const endResult = (((state.collectDocuments * 0.75) + (state.checkHours * 0.75) + (state.checkInvoice * 0.5)) / 40) * 50000;
-        
-        this.props.endResultUpdated(endResult)
-        
+        const endResult =
+          (state.collectDocuments * 0.75 +
+            state.checkHours * 0.75 +
+            state.checkInvoice * 0.5) /
+          40 *
+          50000;
+
+        this.props.endResultUpdated(endResult);
+
         return endResult;
       }
     };
   }
 
   render() {
-    const {collectDocuments, checkHours, checkInvoice} = this.inputRows; 
+    const { collectDocuments, checkHours, checkInvoice } = this.inputRows;
 
     return (
       <Section title="Tijdsbesteding Planning, registratie en coordinatie (uur per week)">
+        <LastColumnTitles
+          firstTitle="Te behalen winst"
+          secondTitle="Winst indicatie"
+        />
         <InputRow
           labelText="Verzamelen en doorsturen uitvraag"
           placeholder="Aantal"
-          onValueChange={value => this.inputValueChange(collectDocuments, value)}
+          onValueChange={value =>
+            this.inputValueChange(collectDocuments, value)
+          }
           subRowFirst="75%"
           subRowSecond={this.state.collectDocumentsProfitIndication}
           popupText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -92,7 +119,7 @@ export class PlanningSection extends Component {
         />
 
         <Inset>
-          <ResultRow 
+          <ResultRow
             labelText="Besparing Loonkosten"
             subRowFirst="€50.000"
             subRowSecond={`${this.state.totalHoursProfit} uur`}

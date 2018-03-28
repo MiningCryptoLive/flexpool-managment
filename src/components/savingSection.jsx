@@ -9,9 +9,9 @@ import { miniMargin, halfMargin, baseMargin, colors } from '../theme.js';
 import { SectionResult } from './sectionResult';
 import { Inset } from './inset';
 import { inputValueChange } from '../utils';
+import { LastColumnTitles } from './lastColumnTitles';
 
 export class SavingSection extends Component {
-
   static propTypes = {
     coreTotal: PropTypes.number,
     endResultUpdated: PropTypes.func
@@ -68,18 +68,18 @@ export class SavingSection extends Component {
         100 *
         this.props.coreTotal,
       endResult: state => {
-        const endResult = state.daysUntilProductive /
-        state.retention *
-        (state.productionDifference / 2) /
-        100 *
-        this.props.coreTotal *
-        0.2;
+        const endResult =
+          state.daysUntilProductive /
+          state.retention *
+          (state.productionDifference / 2) /
+          100 *
+          this.props.coreTotal *
+          0.2;
 
         this.props.endResultUpdated(endResult);
 
         return endResult;
       }
-        
     };
   }
 
@@ -93,6 +93,11 @@ export class SavingSection extends Component {
 
     return (
       <Section title="Besparing op inleen & Productiviteitsverhoging">
+        <LastColumnTitles
+          firstTitle="Te behalen winst"
+          secondTitle="Winst indicatie"
+        />
+
         <InputRow
           labelText="Veiligheidsmarge op de uitvraag"
           placeholder="0%"
