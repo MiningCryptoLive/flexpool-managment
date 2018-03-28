@@ -67,20 +67,20 @@ export class TotalSection extends Component {
   static propTypes = {
     totalParts: PropTypes.array,
     coreTotal: PropTypes.number
-  }
+  };
 
   render() {
     let total = 0;
 
-    this.props.totalParts.forEach((totalNumber) => {
+    this.props.totalParts.forEach(totalNumber => {
       if (typeof totalNumber !== 'number') {
         return;
       }
 
       total = total + totalNumber;
-    })
+    });
 
-    const percentageOf = (total / this.props.coreTotal) * 100
+    const percentageOf = total / this.props.coreTotal * 100;
 
     return (
       <TotalSectionComponent>
@@ -88,8 +88,10 @@ export class TotalSection extends Component {
           Mogelijkheid voor besparing door flexpool managment
         </TotalTitle>
         <TotalCol>
-          <TotalLabel>{percentageOf | 0}% van €{this.props.coreTotal},-</TotalLabel>
-          <TotalValue>€{total},-</TotalValue>
+          <TotalLabel>
+            {percentageOf | 0}% van €{Math.round(this.props.coreTotal)},-
+          </TotalLabel>
+          <TotalValue>€{Math.round(total)},-</TotalValue>
         </TotalCol>
       </TotalSectionComponent>
     );
