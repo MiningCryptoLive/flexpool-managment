@@ -32,17 +32,19 @@ const Col = styled.div`
     padding: 0 ${props => (props.inset ? '10px' : '0')};
 
     &:last-of-type {
-      display: none;
+      display: ${props => (props.noCollapse ? 'initial' : 'none')};
     }
   }
 `;
 
 export class Row extends Component {
   static propTypes = {
-    inset: PropTypes.bool
+    inset: PropTypes.bool,
+    noCollapse: PropTypes.bool
   };
   static defaultProps = {
-    inset: false
+    inset: false,
+    noCollapse: false
   };
 
   render() {
@@ -50,7 +52,7 @@ export class Row extends Component {
   }
 
   generateCols() {
-    const { children, inset } = this.props;
+    const { children, inset, noCollapse } = this.props;
 
     if (!children) {
       throw 'This implementation of row should always have 3 children';
@@ -61,7 +63,7 @@ export class Row extends Component {
 
     for (let i = 0; i < children.length; i++) {
       cols.push(
-        <Col key={i} inset={inset}>
+        <Col key={i} inset={inset} noCollapse={noCollapse}>
           {children[i]}
         </Col>
       );

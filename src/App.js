@@ -12,6 +12,7 @@ import { TimeSavingSection } from './components/timeSavingSection';
 import { CostReductionSection } from './components/costReductionSection';
 import Head from './components/head';
 import { TotalSection } from './components/totalSection';
+import {MailSection} from './components/mailSection'
 
 const Container = styled.div`
   margin: ${baseMargin}px auto;
@@ -146,6 +147,7 @@ class App extends Component {
 
           coreTotal={this.state.coreTotal}
         />
+        <MailSection />
       </Container>
     );
   }

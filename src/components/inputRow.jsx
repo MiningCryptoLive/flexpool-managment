@@ -10,9 +10,13 @@ const Input = styled.input`
   border-width: 0 0 2px 0;
   border-color: ${colors.lightGrey};
   border-style: solid;
-  color: ${colors.lightGrey};
+  color: ${colors.darkGrey};
   line-height: 30px;
   width: 100%;
+
+  &:placeholder {
+    color: ${colors.lightGrey}
+  }
 `;
 
 export class InputRow extends Component {

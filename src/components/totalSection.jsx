@@ -10,6 +10,11 @@ const TotalSectionComponent = styled.div`
   display: flex;
   background-color: ${colors.green};
   align-items: center;
+
+  @media (min-width: 10px) and (max-width: 800px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 const TotalTitle = styled.h3`
@@ -21,6 +26,10 @@ const TotalTitle = styled.h3`
 
   @media (min-width: 10px) and (max-width: 800px) {
     font-size: 32px;
+    flex: auto 0 0;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-right: 0;
   }
 
   @media (min-width: 10px) and (max-width: 400px) {
@@ -31,6 +40,11 @@ const TotalTitle = styled.h3`
 const TotalCol = styled.div`
   flex: 33.33333% 0 0;
   padding-left: 20px;
+
+   @media (min-width: 10px) and (max-width: 800px) {
+    flex: auto;
+    padding-left: 0;
+  }
 `;
 
 const TotalLabel = styled.p`
