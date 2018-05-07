@@ -15,11 +15,10 @@ import { TotalSection } from './components/totalSection';
 import {MailSection} from './components/mailSection'
 
 const Container = styled.div`
-  margin: ${baseMargin}px auto;
+  margin: 0 auto;
   min-height: 100px;
   width: 1000px;
   background-color: ${colors.white};
-  box-shadow: 0 0 100px 10px ${colors.shadowBlack};
 
   @media (min-width: 10px) and (max-width: 1000px) {
     margin: 0;
